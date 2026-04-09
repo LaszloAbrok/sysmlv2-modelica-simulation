@@ -23,21 +23,24 @@ def run_simulation():
     
     time_vec = np.arange(0.0, 10.0, 0.005)
     
-    # structured numpy arra for inputs
-    
-    dtype = [('time', np.float64), ('sfj_1', np.float64),
-             ('sfj_2', np.float64), ('sfj_3', np.float64),
-             ('val_r', np.float64), ('val_l', np.float64)]
+    # structured numpy array for inputs
+    dtype = [('time', np.float64), 
+             ('sensor_failure_injection_1', np.float64),
+             ('sensor_failure_injection_2', np.float64), 
+             ('sensor_failure_injection_3', np.float64),
+             ('resistor_failure_injection', np.float64), 
+             ('inductor_failure_injection', np.float64)]
     
     input_data = np.zeros(len(time_vec), dtype=dtype)
     
     input_data['time'] = time_vec
-
-    input_data['sfj_1'] = sfj_1
-    input_data['sfj_2'] = sfj_2
-    input_data['sfj_3'] = sfj_3
-    input_data['val_r'] = val_r
-    input_data['val_l'] = val_l
+    
+    # Itt is a hivatalos neveket kell használni az input_data-ban!
+    input_data['sensor_failure_injection_1'] = sfj_1
+    input_data['sensor_failure_injection_2'] = sfj_2
+    input_data['sensor_failure_injection_3'] = sfj_3
+    input_data['resistor_failure_injection'] = val_r
+    input_data['inductor_failure_injection'] = val_l
     
     # print out inputs
     
@@ -55,7 +58,7 @@ def run_simulation():
         "resistor_failure_injection",
         "inductor_failure_injection",
         "variable_resistor.R",
-        "inductor.L"
+        "inductor.L",
     ]
     
     try:
