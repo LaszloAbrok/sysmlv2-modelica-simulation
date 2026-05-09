@@ -2,3 +2,5 @@ modelica/fmus/
 .venv/
 .vscode/
 __pycache__/
+sysphs/
+.env
