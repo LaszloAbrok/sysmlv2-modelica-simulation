@@ -1,0 +1,28 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.5 Chrome/138.0.7204.251 Electron/37.6.1 Safari/537.36" version="28.2.5">
+  <diagram name="Page-1" id="OQEq_85klFfIjp7TA3a_">
+    <mxGraphModel dx="946" dy="605" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="1nofWAHwOK9peGRa-mIc-1" value="FaultMode SysMLv2 package&lt;div&gt;benne fault kindok, amiket használhat a system engineer&lt;br&gt;pl. sensor oscillation&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="160" width="240" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="1nofWAHwOK9peGRa-mIc-2" value="Modelica szótárban&lt;br&gt;Step blokk&lt;div&gt;Az ugrás értékeit társítjuk a különböző faultokhoz&lt;/div&gt;&lt;div&gt;Ezekhez az ugrásokhoz jön egy idő is&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="160" width="240" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="1nofWAHwOK9peGRa-mIc-3" value="PIM SysMLv2 modell továbbra is függetlenül a Modelicás dolgoktól" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="320" width="240" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="1nofWAHwOK9peGRa-mIc-4" value="&lt;div&gt;SimulationSetup&lt;br&gt;attribute :&amp;gt;&amp;gt; height = &lt;br&gt;                if selectedFault == Oscillation then 1.0 &lt;br&gt;                else if selectedFault == Drift then 2.0 &lt;br&gt;                else ...&lt;br&gt;Lényegében egy fault selection&lt;br&gt;Ez alapján a Step blokkok lesznek legenerálva a többi elem pedig behzva&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="480" width="520" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="1nofWAHwOK9peGRa-mIc-5" value="FaultySensor&lt;br&gt;Ugyanúgy mappelés, mint a többinél, csak módosított egyenlettel&lt;div&gt;flange.tau = 0&lt;br&gt;w.signalValue = der(flange.phi)+faultValue;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="320" width="240" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="1nofWAHwOK9peGRa-mIc-6" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Konzi&lt;/h1&gt;&lt;p&gt;Lehet FailureMode lib&lt;/p&gt;&lt;p&gt;occurrence definition is lehet&lt;/p&gt;&lt;p&gt;Leszármazás egy olyan komponensből amely tartalmazza a fault activation lehetőségét.&lt;/p&gt;&lt;p&gt;Voteren példa&lt;br&gt;1-2 hiba&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="620" y="30" width="180" height="240" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

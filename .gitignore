@@ -4,3 +4,4 @@ modelica/fmus/
 __pycache__/
 sysphs/
 .env
+.drawio/
