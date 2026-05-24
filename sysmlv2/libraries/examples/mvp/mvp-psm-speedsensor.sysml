@@ -1,4 +1,4 @@
-package PSM_SpeedSensor{
+package PSM_MVP_SpeedSensor{
 
     private import PIM_MVP_SpeedSensor::**;
 

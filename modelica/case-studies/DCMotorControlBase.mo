@@ -16,10 +16,10 @@ model DCMotorControlBase
    annotation(Placement(transformation(origin = {60, 10}, extent = {{-10, -10}, {10, 10}})));
    
   Modelica.Electrical.Analog.Basic.RotationalEMF emf(k = 0.1)
-   annotation(Placement(transformation(origin = {76, 40}, extent = {{-10, -10}, {10, 10}})));
+   annotation(Placement(transformation(origin = {94, 48}, extent = {{-10, -10}, {10, 10}})));
    
   Modelica.Electrical.Analog.Basic.Ground ground
-   annotation(Placement(transformation(origin = {8, -18}, extent = {{-10, -10}, {10, 10}})));
+   annotation(Placement(transformation(origin = {-8, 68}, extent = {{-10, -10}, {10, 10}}, rotation = -90)));
    
   Modelica.Mechanics.Rotational.Components.Inertia load(J = 0.05)
    annotation(Placement(transformation(origin = {90, -40}, extent = {{-10, -10}, {10, 10}}, rotation = -90)));
@@ -38,17 +38,17 @@ equation
   connect(R.n, L.p) annotation(
     Line(points = {{36, 10}, {50, 10}}, color = {0, 0, 255}));
   connect(L.n, emf.p) annotation(
-    Line(points = {{70, 10}, {75, 10}, {75, 50}, {76, 50}}, color = {0, 0, 255}));
+    Line(points = {{70, 10}, {75, 10}, {75, 58}, {94, 58}}, color = {0, 0, 255}));
   connect(emf.n, amplifier.n) annotation(
-    Line(points = {{76, 30}, {2, 30}}, color = {0, 0, 255}));
+    Line(points = {{94, 38}, {41, 38}, {41, 30}, {2, 30}}, color = {0, 0, 255}));
   connect(sensor.w, feedback.u2) annotation(
     Line(points = {{-49, -50}, {-60, -50}, {-60, 12}}, color = {0, 0, 127}));
   connect(sensor.flange, load.flange_b) annotation(
     Line(points = {{-28, -50}, {90, -50}}));
   connect(amplifier.n, ground.p) annotation(
-    Line(points = {{2, 30}, {7, 30}, {7, -8}, {8, -8}}, color = {0, 0, 255}));
+    Line(points = {{2, 30}, {2, 68}}, color = {0, 0, 255}));
   connect(load.flange_a, emf.flange) annotation(
-    Line(points = {{90, -30}, {90, -9}, {86, -9}, {86, 40}}));
+    Line(points = {{90, -30}, {90, 6}, {104, 6}, {104, 48}}));
   connect(ramp.y, feedback.u1) annotation(
     Line(points = {{-76, 20}, {-68, 20}}, color = {0, 0, 127}));
 

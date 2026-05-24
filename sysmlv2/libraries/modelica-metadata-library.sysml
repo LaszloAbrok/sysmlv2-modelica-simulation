@@ -1,7 +1,7 @@
 package ModelicaMetadataLibrary {
     private import ScalarValues::*;
 
-    // Modelica kinds
+    // Modelica kinds   
 
     enum def ModelicaComponentKind {
         Model;
