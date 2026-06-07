@@ -55,7 +55,7 @@ package ModelicaMetadataLibrary {
     metadata def ModelicaVariableMetadata {
         :> annotatedElement : SysML::AttributeUsage;
         
-        attribute variability : ModelicaVariability default ModelicaVariability::Continuous;
+        attribute variability : ModelicaVariability default ModelicaVariability::Parameter;
         attribute causality   : ModelicaCausality   default ModelicaCausality::Internal;
         attribute kind        : ModelicaVariableKind default ModelicaVariableKind::Potential;
     }

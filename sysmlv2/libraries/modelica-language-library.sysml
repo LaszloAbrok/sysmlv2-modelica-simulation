@@ -22,6 +22,11 @@ package ModelicaLanguageLibrary {
             }
 
             port def RotationalFlange {
+                @ModelicaMappingMetadata {
+                    :>> path = "Modelica.Mechanics.Rotational.Interfaces.Flange_a";
+                    :>> componentType = ModelicaComponentKind::Connector;
+                    :>> isCustom = false;
+                }
                 attribute phi : PlaneAngleValue; 
                 
                 attribute tau : TorqueValue {
@@ -36,6 +41,13 @@ package ModelicaLanguageLibrary {
             
             port def RealInputPort {
                 attribute signalValue : Real {
+                    
+                    @ModelicaMappingMetadata {
+                    :>> path = "Modelica.Blocks.Interfaces.RealOutput";
+                    :>> componentType = ModelicaComponentKind::Connector;
+                    :>> isCustom = false;
+                    }
+                    
                     @ModelicaVariableMetadata {
                         :>> causality = ModelicaCausality::Input;
                     }

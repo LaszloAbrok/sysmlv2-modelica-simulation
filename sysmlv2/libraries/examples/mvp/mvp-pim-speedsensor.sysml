@@ -18,6 +18,7 @@ package PIM_MVP_SpeedSensor{
 
 
     occurrence def GainError :> FailureMode{
+        :>> p = 0.4;
         :>> description = "Scaling error in the measurement.";
         attribute gainFactor : Real;
     }
@@ -38,9 +39,8 @@ package PIM_MVP_SpeedSensor{
 
     part SensorUnderStudy: RotationalSpeedSensor{
         
-
         occurrence gainError : GainError subsets failureModes{
-
+            
             calc startBehavior : StochasticBehavior {
                 in p = 0.4;
                 in dist : NormalProbabilityDistribution {

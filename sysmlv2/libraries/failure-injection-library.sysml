@@ -1,4 +1,4 @@
-library package FailureInjectionLibrary{
+package FailureInjectionLibrary{
     
     private import ScalarValues::**;
     private import ISQ::**;
@@ -39,7 +39,7 @@ library package FailureInjectionLibrary{
 
     occurrence def FailureMode{
         attribute description: String;
-        
+        attribute p : Real;
         // attribute mode: StochasticMode;
         
         // left it for the simulation orchestrator

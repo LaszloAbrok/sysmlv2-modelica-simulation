@@ -19,7 +19,7 @@ package PSM_MVP_SpeedSensor{
         port flange : RotationalFlange :>> RotationalSpeedSensor::flange;
         out port w : RealOutputPort :>> RotationalSpeedSensor::w;
 
-        attribute w_nom : Real;
+        attribute ideal : Real;
         
         constraint simulationEquations {
             @ModelicaEquationMetadata {
@@ -27,7 +27,7 @@ package PSM_MVP_SpeedSensor{
                 "
                 w_ideal = der(flange.phi);
                 flange.tau = 0.0;
-                w_out.signal = w_ideal;
+                w.signal = w_ideal;
                 ";
             }
         }
@@ -37,16 +37,16 @@ package PSM_MVP_SpeedSensor{
         constraint :>> simulationEquations {
             @ModelicaEquationMetadata {
                 :>> equationString = 
-                "w_ideal = der(flange.phi);
+                "
+                w_ideal = der(flange.phi);
                  flange.tau = 0.0;
                  
-                 w_out.signalValue = 
-                    if stuckAtValueError.isActive then stuckAtValueError.stuckValue
+                 w = if stuckAtValueError.isActive then stuckAtValueError.stuckValue
                     else if gainError.isActive then w_ideal * gainError.gainFactor
-                    else w_ideal;";
+                    else w_ideal;
+                ";
             }
         }
-
         
         attribute :>> gainError.gainFactor {
             @ModelicaVariableMetadata { variability = ModelicaVariability::Parameter; }
